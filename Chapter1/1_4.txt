@@ -1,0 +1,4 @@
+#lang sicp
+;1.4
+return (b > 0) ? (a + b) : (a - b);
+
