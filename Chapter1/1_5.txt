@@ -1,0 +1,13 @@
+#lang sicp
+;1.5
+
+Normal-order evaluation:
+
+    *   (test 0 (p))
+    *   (if (= 0 0) 0 (p)))
+    *   0
+
+Applicative-order evaluation:
+
+    (p) is evaluated first, which returns (p). This results in an infinte loop.
+
