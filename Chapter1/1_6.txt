@@ -1,0 +1,7 @@
+#lang sicp
+;1.6
+
+(sqrt-iter (improve guess x) x) expands itself infinitely before cond is
+executed. However, if we replace the procedure with a single value, which will
+not be expanded, the infinite loop is avoided implicitly.
+
