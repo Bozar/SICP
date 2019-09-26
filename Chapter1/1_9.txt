@@ -1,0 +1,44 @@
+#lang sicp
+;1.9
+
+;p1
+(define (+ a b)
+    (if (= a 0) b (inc (+ (dec a) b))))
+
+(+ 4 5)
+(inc (+ (dec 4) 5))
+(inc (+ 3 5))
+(inc (inc (+ (dec 3) 5)))
+(inc (inc (+ 2 5)))
+(inc (inc (inc (+ (dec 2) 5))))
+(inc (inc (inc (+ 1 5))))
+(inc (inc (inc (inc (+ (dec 1) 5)))))
+(inc (inc (inc (inc (+ 0 5)))))
+(inc (inc (inc (inc 5))))
+(inc (inc (inc 6)))
+(inc (inc 7))
+(inc 8)
+9
+
+;p2
+(define (+ a b)
+    (if (= a 0) b (+ (dec a) (inc b))))
+
+(+ 4 5)
+(+ (dec 4) (inc 5))
+(+ 3 6)
+(+ (dec 3) (inc 6))
+(+ 2 7)
+(+ (dec 2) (inc 7))
+(+ 1 8)
+(+ (dec 1) (inc 8))
+(+ 0 9)
+9
+
+In this case, `+` is an compound operator, which has to be expanded, and `inc`,
+`dec` and `=` can be evaluated directly.
+
+P1 is recursive because we do not evaluate the procedure until `a` equals to 0.
+P2 is iterative because we just need to variables, `a` and `b` to record the
+current state.
+
