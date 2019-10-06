@@ -1,0 +1,26 @@
+#lang sicp
+; vim: set tw=80:
+; 1.33
+
+; a:
+
+(define (filtered-accumulate predict? combiner null-value term a next b)
+    (if (or (> a b) (not (predict? a)))
+        null-value
+        (combiner
+            (term a)
+            (accumulate combiner null-value term (next a) next b))))
+
+(define (square-sum a b)
+    (define (square x) (* x x))
+    (define (inc x) (+ x 1))
+    (filtered-accumulate prime? + 0 square a inc b))
+
+; b:
+
+(define (product n)
+    (define (valid? x) (= (GCD x n) 1))
+    (define (idencital x) x))
+    (define (inc x) (+ x 1))
+    (filtered-accumulate valid? * 1 idencital 1 inc n))
+
