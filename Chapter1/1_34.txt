@@ -1,0 +1,10 @@
+#lang sicp
+; vim: set tw=80:
+; 1.34
+
+(f f)
+(f 2)
+(2 2)
+
+Since 2 is a number instead of a procedure, there will be an error.
+
